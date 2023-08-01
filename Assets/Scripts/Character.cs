@@ -25,9 +25,18 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //fixRotation();
         move();
         flipHorizontal();
     }
+
+    private void fixRotation()
+    {
+        Vector3 fixRotate = transform.eulerAngles;
+        if (fixRotate.z != 0)
+            fixRotate.z = 0;
+        transform.eulerAngles = fixRotate;
+    }    
 
     private void move()
     {
