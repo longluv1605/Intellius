@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     public static Health Instance {get; private set;}
     public float maxHealth = 100f; 
     public float currentHealth = 100f; 
-    private float totalTime = 60f; 
+    private float totalTime = 600f; 
     
     private float healthDecreaseRate; 
 
