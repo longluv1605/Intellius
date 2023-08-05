@@ -6,6 +6,6 @@ public class Quest1 : Quest
 {
     private void Awake()
     {
-        setQuesTxt("Cau 1");
+        setInput("Cau 1", 'B');
     }
 }

@@ -6,6 +6,7 @@ public abstract class Quest : MonoBehaviour
 {
     protected bool onClicked = false;
     protected string quesTxt;
+    protected char trueAnswer;
     public GameObject excIcon;
 
     protected void OnTriggerStay2D(Collider2D collision)
@@ -31,13 +32,18 @@ public abstract class Quest : MonoBehaviour
         }
     }
 
-    public void setQuesTxt(string input)
+    public void setInput(string input, char _trueAnswer)
     {
         quesTxt = input;
+        trueAnswer = _trueAnswer;
     }
 
     public string getQuesTxt()
     {
         return quesTxt;
+    }
+    public char getTrueAnswer()
+    {
+        return trueAnswer;
     }
 }

@@ -20,7 +20,7 @@ public class FollowQuest : MonoBehaviour
         
         btn.onClick.AddListener(() =>
         {
-            QuesDialogUI.Instance.ShowQuestion(quest.GetComponent<Quest>().getQuesTxt(), 'A');
+            QuesDialogUI.Instance.ShowQuestion(quest.GetComponent<Quest>().getQuesTxt(), quest.GetComponent<Quest>().getTrueAnswer());
         });
 
         gameObject.SetActive(false);
