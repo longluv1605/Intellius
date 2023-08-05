@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {   
@@ -44,5 +45,6 @@ public class Health : MonoBehaviour
                 }
             }
         }
+        SceneManager.LoadScene(3);
     }
 }

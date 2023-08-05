@@ -27,6 +27,7 @@ public class QuesDialogUI : MonoBehaviour
         skipButton = transform.Find("Skip").GetComponent<Button>();
         Score = 0;
         textScore.text = Score.ToString();
+        PlayerPrefs.SetInt("PlayerScore", Score);
     }
 
     public void trueAns()
@@ -34,6 +35,7 @@ public class QuesDialogUI : MonoBehaviour
             Score += 10;
             textScore.text = Score.ToString();
             Health.Instance.currentHealth += 10f;
+            PlayerPrefs.SetInt("PlayerScore", Score);
     }
 
     public void falseAns()
