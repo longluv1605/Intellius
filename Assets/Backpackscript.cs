@@ -22,6 +22,6 @@ public class Backpackscript : MonoBehaviour
 
     private void OpenBackpack()
     {
-        UI.Instance.gameObject.SetActive(true);
+        Document.Instance.gameObject.SetActive(true);
     }
 }
