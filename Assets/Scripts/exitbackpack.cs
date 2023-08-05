@@ -7,7 +7,7 @@ public class exitbackpack : MonoBehaviour
     public void exit()
     {
         Backpackscript.Instance.gameObject.SetActive(true);
-        GameObject.Find("UI").gameObject.SetActive(false);
+        Document.Instance.gameObject.SetActive(false);
     }
 
 }
