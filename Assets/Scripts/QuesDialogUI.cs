@@ -16,7 +16,7 @@ public class QuesDialogUI : MonoBehaviour
     private bool isAnswered = false;
 
     private void Awake()
-    {
+    {   
         Instance = this;
         gameObject.SetActive(false);
         textMessPro = transform.Find("QuesText").GetComponent<TextMeshProUGUI>();
@@ -33,11 +33,13 @@ public class QuesDialogUI : MonoBehaviour
     {
             Score += 10;
             textScore.text = Score.ToString();
+            Health.Instance.currentHealth += 10f;
     }
 
     public void falseAns()
     {
         CineCamShake.Instance.ShakeCam(5f, .1f);
+         Health.Instance.currentHealth -= 10f;
     }
 
     public bool answered()
