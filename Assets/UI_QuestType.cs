@@ -23,6 +23,8 @@ public class UI_QuestType : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
+        question.text = null;
+        answer.text = null;
     }
 
     public void Hide()

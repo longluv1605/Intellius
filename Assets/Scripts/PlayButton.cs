@@ -46,17 +46,20 @@ public class PlayButton : MonoBehaviour
     {
         if (num > 0)
         {
-            UI_QuestType.Instance.Hide();
+            //UI_QuestType.Instance.Hide();
             num--;
-            string[] lines = new string[2];
-            lines[0] = UI_QuestType.Instance.getQuestion();
-            lines[1] = UI_QuestType.Instance.getAnswer();
+            string[] lines = new string[4];
+            lines[0] = "|\n";
+            lines[1] = UI_QuestType.Instance.getQuestion();
+            lines[2] = UI_QuestType.Instance.getAnswer();
+            lines[3] = "\n|";
             File.AppendAllLines(Application.dataPath + "/Quest.txt", lines);
             UI_QuestType.Instance.Show();
-        }
-        else
-        {
-            UI_QuestType.Instance.Hide();
+
+            if (num <= 0)
+            {
+                UI_QuestType.Instance.Hide();
+            }
         }
     }
 }
