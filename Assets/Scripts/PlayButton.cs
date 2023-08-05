@@ -15,4 +15,9 @@ public class PlayButton : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Create()
+    {
+
+    }
 }

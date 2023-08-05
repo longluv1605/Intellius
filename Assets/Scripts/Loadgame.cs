@@ -19,11 +19,11 @@ public class Loadgame : MonoBehaviour
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] parts = line.Split() as string[];
-                    Debug.Log(parts[0] + " " + parts[1] + "\n");
+                    //Debug.Log(parts[0] + " " + parts[1] + "\n");
 
                     float.TryParse(parts[0], out float x);
                     float.TryParse(parts[1], out float y);
-                    Debug.Log(x + " " + y);
+                    //Debug.Log(x + " " + y);
 
                     GameObject quest = Instantiate(questPrefab);
                     quest.transform.position = new Vector3((float) x, (float) y, 1);
