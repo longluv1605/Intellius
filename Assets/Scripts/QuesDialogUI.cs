@@ -15,6 +15,7 @@ public class QuesDialogUI : MonoBehaviour
     public TextMeshProUGUI textScore;
     private bool isAnswered = false;
 
+
     private void Awake()
     {   
         Instance = this;
@@ -41,7 +42,9 @@ public class QuesDialogUI : MonoBehaviour
     public void falseAns()
     {
         CineCamShake.Instance.ShakeCam(5f, .1f);
-         Health.Instance.currentHealth -= 10f;
+        Health.Instance.currentHealth -= 10f;
+        
+
     }
 
     public bool answered()
@@ -61,7 +64,6 @@ public class QuesDialogUI : MonoBehaviour
         {
             isAnswered = true;
             Backpackscript.Instance.gameObject.SetActive(true);
-            Hide();
             if (trueAnswer == 'A' || trueAnswer == 'a')
             {
                 trueAns();
@@ -70,13 +72,13 @@ public class QuesDialogUI : MonoBehaviour
             {
                 falseAns();
             }
+            Hide();
         });
         bButton.onClick.RemoveAllListeners();
         bButton.onClick.AddListener(() =>
         {
             isAnswered = true;
             Backpackscript.Instance.gameObject.SetActive(true);
-            Hide();
             if (trueAnswer == 'B' || trueAnswer == 'b')
             {
                 trueAns();
@@ -85,26 +87,27 @@ public class QuesDialogUI : MonoBehaviour
             {
                 falseAns();
             }
+            Hide();
         });
         cButton.onClick.RemoveAllListeners();
         cButton.onClick.AddListener(() => {
             isAnswered = true;
             Backpackscript.Instance.gameObject.SetActive(true);
-            Hide();
             if (trueAnswer == 'C' || trueAnswer == 'c')
             {
                 trueAns();
             }
             else
             {
+
                 falseAns();
             }
+            Hide();
         });
         dButton.onClick.RemoveAllListeners();
         dButton.onClick.AddListener(() => {
             isAnswered = true;
             Backpackscript.Instance.gameObject.SetActive(true);
-            falseAns();
             if (trueAnswer == 'D' || trueAnswer == 'd')
             {
                 trueAns();
@@ -113,6 +116,7 @@ public class QuesDialogUI : MonoBehaviour
             {
                 falseAns();
             }
+            Hide();
         });
         skipButton.onClick.RemoveAllListeners();
         skipButton.onClick.AddListener(() =>
