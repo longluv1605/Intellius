@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Character : MonoBehaviour
 {
+
+
     private float horizontal = 0;
     private bool isFacingRight = false;
     private float direction = -1;
@@ -51,6 +53,7 @@ public class Character : MonoBehaviour
             movingH = 0;
 
             moving = true;
+
         }
         else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
@@ -61,6 +64,8 @@ public class Character : MonoBehaviour
             movingH = 0;
 
             moving = true;
+
+
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
@@ -71,6 +76,7 @@ public class Character : MonoBehaviour
             movingH = 1;
 
             moving = true;
+
         }
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
@@ -81,6 +87,8 @@ public class Character : MonoBehaviour
             movingH = -1;
 
             moving = true;
+
+            
         }
         else
         {
