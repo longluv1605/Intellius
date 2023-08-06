@@ -7,6 +7,18 @@ public class PlayButton : MonoBehaviour
     private string number;
     private int num;
     private bool created = false;
+    public GameObject play;
+    public GameObject quit;
+    public GameObject options;
+    public GameObject create;
+
+
+    /*private void Awake()
+    {
+        play = GameObject.Find("Play");
+        quit = GameObject.Find("quit");
+        options = GameObject.Find("options");
+    }*/
 
     public void Play()
     {
@@ -32,6 +44,10 @@ public class PlayButton : MonoBehaviour
     public void Create()
     {
         created = true;
+        play.gameObject.SetActive(false);
+        quit.gameObject.SetActive(false);
+        options.gameObject.SetActive(false);
+        create.gameObject.SetActive(false);
         UI_NumberQuest.Instance.Show();
     }
 
@@ -49,6 +65,10 @@ public class PlayButton : MonoBehaviour
     public void CancelBtnNumQuest()
     {
         created = false;
+        play.gameObject.SetActive(true);
+        quit.gameObject.SetActive(true);
+        options.gameObject.SetActive(true);
+        create.gameObject.SetActive(true);
         UI_NumberQuest.Instance.Hide();
     }
 
@@ -83,6 +103,10 @@ public class PlayButton : MonoBehaviour
     public void FinishBtnDocument()
     {
         UI_Documentary.Instance.Hide();
+        play.gameObject.SetActive(true);
+        quit.gameObject.SetActive(true);
+        options.gameObject.SetActive(true);
+        create.gameObject.SetActive(true);
         File.WriteAllText(Application.dataPath + "/Document.txt", UI_Documentary.Instance.getText());
     }
 }
