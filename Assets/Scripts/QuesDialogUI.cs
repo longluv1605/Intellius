@@ -2,6 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using CodeMonkey;
+using System.Collections;
+using System.Collections.Generic;
+
 public class QuesDialogUI : MonoBehaviour
 {
     public static QuesDialogUI Instance { get; private set; }
@@ -14,6 +18,8 @@ public class QuesDialogUI : MonoBehaviour
     private Button skipButton;
     public TextMeshProUGUI textScore;
     private bool isAnswered = false;
+    public Canvas canvasCorrect;
+    public Canvas canvasIncorrect;
 
 
     private void Awake()
@@ -37,14 +43,14 @@ public class QuesDialogUI : MonoBehaviour
             textScore.text = Score.ToString();
             Health.Instance.currentHealth += 10f;
             PlayerPrefs.SetInt("PlayerScore", Score);
+            setCorrect();
     }
 
     public void falseAns()
     {
         CineCamShake.Instance.ShakeCam(5f, .1f);
         Health.Instance.currentHealth -= 10f;
-        
-
+        setIncorrect();
     }
 
     public bool answered()
@@ -127,10 +133,20 @@ public class QuesDialogUI : MonoBehaviour
 
     }
 
-
-
     private void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    private IEnumerator setCorrect() {
+        canvasCorrect.enabled = true;
+        yield return new WaitForSeconds(5f);
+        canvasCorrect.enabled = false;
+    }
+
+    private IEnumerator setIncorrect() {
+        canvasIncorrect.enabled = true;
+        yield return new WaitForSeconds(5f);
+        canvasIncorrect.enabled = false;
     }
 }
