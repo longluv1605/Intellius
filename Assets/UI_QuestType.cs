@@ -25,6 +25,23 @@ public class UI_QuestType : MonoBehaviour
         gameObject.SetActive(true);
         question.text = null;
         answer.text = null;
+        answer.characterLimit = 1;
+        answer.onValidateInput = (string text, int charIndex, char addChar) =>
+        {
+            return ValidateChar("ABCDabcd", addChar);
+        };
+    }
+
+    private char ValidateChar(string validateChars, char addChar)
+    {
+        if (validateChars.IndexOf(addChar) != -1)
+        {
+            return addChar;
+        }
+        else
+        {
+            return '\0';
+        }
     }
 
     public void Hide()

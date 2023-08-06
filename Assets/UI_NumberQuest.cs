@@ -19,6 +19,22 @@ public class UI_NumberQuest : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
+        inputField.onValidateInput = (string text, int charIndex, char addChar) =>
+        {
+            return ValidateChar("123456890", addChar);
+        };
+    }
+
+    private char ValidateChar(string validateChars, char addChar)
+    {
+        if (validateChars.IndexOf(addChar) != -1)
+        {
+            return addChar;
+        }
+        else
+        {
+            return '\0';
+        }
     }
 
     public void Hide()
