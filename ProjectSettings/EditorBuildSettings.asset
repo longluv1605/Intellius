@@ -12,12 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 4ce9a0cc1fb5147869f8d7b90b08548f
   - enabled: 1
-    path: Assets/Scenes/Lib.unity
-    guid: dd7606c7c72225c4c90ae5c52b35acdd
-  - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: bf3f368304f5fd64ba132813eff3818e
   - enabled: 1
-    path: Assets/Scenes/options.unity
+    path: Assets/Scenes/Options.unity
     guid: e99736923b5aa45879bf677cdaaeb07f
   m_configObjects: {}

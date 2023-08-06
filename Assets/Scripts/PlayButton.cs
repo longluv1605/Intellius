@@ -34,7 +34,7 @@ public class PlayButton : MonoBehaviour
     }
     public void Options()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
     public void Quit()
     {
