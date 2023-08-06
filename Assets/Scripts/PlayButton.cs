@@ -97,6 +97,10 @@ public class PlayButton : MonoBehaviour
     public void CancelBtnDocument()
     {
         UI_Documentary.Instance.Hide();
+        play.gameObject.SetActive(true);
+        quit.gameObject.SetActive(true);
+        options.gameObject.SetActive(true);
+        create.gameObject.SetActive(true);
         File.WriteAllText(Application.dataPath + "/Document.txt", "");
     }
 

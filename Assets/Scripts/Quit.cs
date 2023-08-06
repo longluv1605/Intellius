@@ -7,6 +7,6 @@ using TMPro;
 public class Quit : MonoBehaviour
 {
     public void quitButton() {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 }
